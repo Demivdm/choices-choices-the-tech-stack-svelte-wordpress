@@ -5,7 +5,7 @@
     // er wordt een verzoek om te data te laden verstuurd. dit wordt gedefinieerd in de functie.
     // De load functie ontvangt fetch, hierbij wordt gebruik gemaakt van de fetch api
     export async function load({ fetch }) {
-    const query = `query getpost {
+    const QUERY = `query getpost {
   posts {
     nodes {
       title
@@ -22,7 +22,7 @@
             "Content-Type": "application/json",
           },
           // de query (het data verzoek) wordt opgezet in json?
-          body: JSON.stringify({ query }),
+          body: JSON.stringify({ QUERY }),
         }
       );
       if (response.ok) {
@@ -38,9 +38,12 @@
       }
      
     }
+
+
   
-   
+   console.log(data)
     export let posts;
+    
     
   </script>
   <script>
